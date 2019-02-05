@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="address" class="com.jubayir.springexample.Address">
+        <constructor-arg value="Dhanmondi"></constructor-arg>
+        <constructor-arg value="Dhaka"></constructor-arg>
+        <constructor-arg value="Bangladesh"></constructor-arg>
+    </bean>
+
+    <bean id="dep" class="com.jubayir.springexample.Department">
+        <constructor-arg value="100"/>
+        <constructor-arg value="English"/>
+    </bean>
+
+    <bean id="st" class="com.jubayir.springexample.Student">
+        <constructor-arg value="10000"></constructor-arg>
+        <constructor-arg value="jubayir"/>
+        <constructor-arg>
+            <ref bean="address"/>
+        </constructor-arg>
+
+        <constructor-arg>
+            <ref bean="dep"/>
+        </constructor-arg>
+    </bean>
+</beans>
