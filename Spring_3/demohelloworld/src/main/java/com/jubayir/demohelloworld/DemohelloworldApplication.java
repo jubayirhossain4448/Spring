@@ -10,5 +10,7 @@ public class DemohelloworldApplication {
         SpringApplication.run(DemohelloworldApplication.class, args);
     }
 
+    public void setMessageProvider(DemohelloworldApplication messageProvider) {
+    }
 }
 
