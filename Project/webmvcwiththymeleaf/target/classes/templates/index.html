@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<h1>Registration Form</h1>
+
+<form th:object="${user}" th:action="@{/}" th:method="POST">
+
+    Name: <input th:field="*{name}"/><br/><br/>
+    Username: <input th:field="*{username}"/><br/><br/>
+    Password: <input th:field="*{password}"/><br/><br/>
+    <button type="submit" value="Save">Save</button>
+</form>
+
+</body>
+</html>
