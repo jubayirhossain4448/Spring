@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        .err {
+            color: red;
+        }
+
+        .succes {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-10">
+            <h1>Role List</h1>
+        </div>
+
+        <div class="col-2">
+            <a class="btn" th:href="@{/addRole}">Add Role</a>
+        </div>
+    </div>
+
+    <table class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Role Name</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tr th:each="role : ${list}">
+            <td th:text="${role.id}"></td>
+            <td th:text="${role.roleName}"></td>
+            <td><a th:href="@{'/editRole/' + ${role.id}}">Edit</a></td>
+            <td><a th:href="@{'/deleteRole/' + ${role.id}}">Delete</a></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
