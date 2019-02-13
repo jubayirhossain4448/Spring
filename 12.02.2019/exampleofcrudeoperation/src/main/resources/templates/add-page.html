@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Index_Page</title>
+
+
+    <style type="text/css">
+        table {
+            width: 80%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <span th:class="succes" th:text="${successMsg}"></span>
+    <form th:action="@{/add}" th:object="${user}" method="post">
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" th:field="*{name}"/></td>
+                <td th:class="err" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+            </tr>
+
+            <tr>
+                <td>Age:</td>
+                <td><input type="text" th:field="*{age}"/></td>
+                <td th:class="err" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</td>
+            </tr>
+
+            <tr>
+                <td>E-mail:</td>
+                <td><input type="email" th:field="*{email}"/></td>
+                <td th:class="err" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</td>
+            </tr>
+
+            <tr>
+                <td>Course Completed:</td>
+                <td><input type="checkbox" th:value="oracle" th:field="*{courseCompleted}">Oracle</input>
+                    <input type="checkbox" th:value="oracle" th:field="*{courseCompleted}">HTML</input>
+                    <input type="checkbox" th:value="oracle" th:field="*{courseCompleted}">PPT</input>
+                    <input type="checkbox" th:value="oracle" th:field="*{courseCompleted}">JAVA</input></td>
+                <td th:class="err" th:if="${#fields.hasErrors('courseCompleted')}" th:errors="*{courseCompleted}">Course
+                    Error
+                </td>
+            </tr>
+
+            <tr>
+                <td>Gender:</td>
+                <td><input type="radio" th:value="Male" th:field="*{gender}"/>Male
+                    <input type="radio" th:value="Female" th:field="*{gender}"/>Female
+                </td>
+                <td th:class="err" th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}">Gender Error</td>
+            </tr>
+
+            <tr>
+                <td>Round:</td>
+                <td>
+                    <select th:field="*{round}">
+                        <option th:value="37">37</option>
+                        <option th:value="38">38</option>
+                        <option th:value="39">39</option>
+                        <option th:value="40">40</option>
+                    </select>
+                </td>
+                <td th:class="err" th:if="${#fields.hasErrors('round')}" th:errors="*{round}">Round Error</td>
+            </tr>
+
+            <tr>
+                <td>Birth Date:</td>
+                <td><input type="date" th:field="*{birthDate}"/></td>
+                <td th:class="err" th:if="${#fields.hasErrors('birthDate')}" th:errors="*{birthDate}">Birth Error</td>
+            </tr>
+
+            <tr>
+                <input><input type="submit">Submit</input></td>
+            </tr>
+        </table>
+    </form>
+    <a th:href="@{/}">Home</a>
+</div>
+</body>
+</html>

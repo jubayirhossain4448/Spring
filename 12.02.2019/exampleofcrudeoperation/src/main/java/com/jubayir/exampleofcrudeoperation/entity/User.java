@@ -47,10 +47,14 @@ public class User {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date lastModifiedDate = new Date();
 
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date birthdate;
+
     public User() {
     }
 
-    public User(@NotNull @Size(min = 2, max = 30, message = "Enter your name") String name, @Min(value = 18, message = "Minimum age is 18") byte age, @NotNull(message = "Enter a valid email") @Email String email, @NotEmpty(message = "Enter at least one course name") String[] courseCompleted, @NotEmpty(message = "Select your gender Please") String gender, @NotEmpty(message = "Select a round") String round, Date regiDate, Date lastModifiedDate) {
+    public User(@NotNull @Size(min = 2, max = 30, message = "Enter your name") String name, @Min(value = 18, message = "Minimum age is 18") byte age, @NotNull(message = "Enter a valid email") @Email String email, @NotEmpty(message = "Enter at least one course name") String[] courseCompleted, @NotEmpty(message = "Select your gender Please") String gender, @NotEmpty(message = "Select a round") String round, Date regiDate, Date lastModifiedDate, Date birthdate) {
         this.name = name;
         this.age = age;
         this.email = email;
@@ -59,6 +63,7 @@ public class User {
         this.round = round;
         this.regiDate = regiDate;
         this.lastModifiedDate = lastModifiedDate;
+        this.birthdate = birthdate;
     }
 
     public Long getId() {
@@ -133,6 +138,14 @@ public class User {
         this.lastModifiedDate = lastModifiedDate;
     }
 
+    public Date getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(Date birthdate) {
+        this.birthdate = birthdate;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -145,6 +158,7 @@ public class User {
                 ", round='" + round + '\'' +
                 ", regiDate=" + regiDate +
                 ", lastModifiedDate=" + lastModifiedDate +
+                ", birthdate=" + birthdate +
                 '}';
     }
 
@@ -161,12 +175,13 @@ public class User {
                 Objects.equals(getGender(), user.getGender()) &&
                 Objects.equals(getRound(), user.getRound()) &&
                 Objects.equals(getRegiDate(), user.getRegiDate()) &&
-                Objects.equals(getLastModifiedDate(), user.getLastModifiedDate());
+                Objects.equals(getLastModifiedDate(), user.getLastModifiedDate()) &&
+                Objects.equals(getBirthdate(), user.getBirthdate());
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(getId(), getName(), getAge(), getEmail(), getGender(), getRound(), getRegiDate(), getLastModifiedDate());
+        int result = Objects.hash(getId(), getName(), getAge(), getEmail(), getGender(), getRound(), getRegiDate(), getLastModifiedDate(), getBirthdate());
         result = 31 * result + Arrays.hashCode(getCourseCompleted());
         return result;
     }
