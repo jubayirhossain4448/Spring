@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add-Page</title>
+
+    <style type="text/css">
+        .err{
+            color: red;
+        }
+        .succes{
+            color:green;
+        }
+    </style>
+</head>
+<body>
+
+<span th:class="succes" th:text="${successMsg}"></span>
+<form th:action="@{/editRole/} + ${id}" th:object="${role}" method="post">
+    <table>
+        <input type="hidden" th:field="*{id}" th:value="${role.id}"/>
+        <tr>
+            <td>Role Name:</td>
+            <td><input type="text" th:field="*{roleName}" th:value="${role.roleName}"/></td>
+            <td th:class="err" th:if="${#fields.hasErrors('roleName')}" th:error="*{roleName}">Role Name Error</td>
+        </tr>
+
+
+        <tr>
+            <td><input type="submit"/>Submit</td>
+        </tr>
+        <a th:href="@{/}">Home</a>
+    </table>
+</form>
+</body>
+</html>

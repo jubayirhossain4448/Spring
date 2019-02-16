@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add-Page</title>
+
+    <style type="text/css">
+        .err{
+            color: red;
+        }
+        .succes{
+            color:green;
+        }
+    </style>
+</head>
+<body>
+
+<span th:class="succes" th:text="${successMsg}"></span>
+<form th:action="@{/add}" th:object="${user}" method="post">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" th:field="*{name}"/></td>
+            <td th:class="err" th:if="${#fields.hasErrors('name')}" th:error="*{name}">Name Error</td>
+        </tr>
+
+        <tr>
+            <td>Mobile:</td>
+            <td><input type="text" th:field="*{mobile}"/></td>
+            <td th:class="err" th:if="${#fields.hasErrors('mobile')}" th:error="*{mobile}">Mobile Error</td>
+        </tr>
+
+        <tr>
+            <td><input type="submit"/></td>
+        </tr>
+        <a th:href="@{/}">Home</a>
+    </table>
+</form>
+</body>
+</html>

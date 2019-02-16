@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        table {
+            width: 80%;
+            margin: 0 auto;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-10">
+            <h1>Student Registration Form</h1>
+        </div>
+        <div class="col-2">
+            <a class="btn" th:href="@{/add}">Add User</a>
+        </div>
+    </div>
+
+    <table class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>E-mail</th>
+            <th>Round</th>
+            <th>Gender</th>
+            <th>Completed_Course</th>
+
+        </tr>
+
+        <tr th:each="u : ${list}">
+            <td th:text="${u.id}"></td>
+            <td th:text="${u.name}"></td>
+            <td th:text="${u.age}"></td>
+            <td th:text="${u.email}"></td>
+            <td th:text="${u.round}"></td>
+            <td th:text="${u.gender}"></td>
+            <td th:text="${u.completedCourse}"></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
