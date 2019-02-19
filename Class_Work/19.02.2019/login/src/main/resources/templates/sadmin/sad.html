@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1><a th:href="@{/logout}">Logout</a></h1>
+<!--WE USE ONLY FOR ADDING AUTHORIZATION!-->
+
+<span sec:authorize="hasRole('ROLE_SUPERADMIN')">
+    This is sadmin page. Only for SuperAdmin using!
+</span>
+</body>
+</html>

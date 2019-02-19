@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add-Role</title>
+</head>
+<body>
+<span th:class="success" th:text="${successMsg}"></span>
+<form th:action="@{/role/add-role}" th:object="${role}" method="post">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" th:field="*{roleName}" /></td>
+
+        </tr>
+
+        <tr>
+            <td><button type="submit" >Save</button></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

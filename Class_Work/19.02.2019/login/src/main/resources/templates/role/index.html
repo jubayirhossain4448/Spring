@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete-Role</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-10">
+            <h2>Role List</h2>
+        </div>
+        <div class="col-2">
+            <a class="btn" th:href="@{/add}" >Add User</a>
+        </div>
+    </div>
+
+    <table class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Role Name</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tr th:each="role : ${list}">
+            <td th:text="${role.id}"></td>
+            <td th:text="${role.roleName}"></td>
+            <td><a th:href="@{'/role-edit/' + ${role.id}}">edit</a></td>
+            <td><a th:href="@{'/role-del/' + ${role.id}}">Del</a></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

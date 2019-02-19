@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit-Role</title>
+</head>
+<body>
+<form  th:action="@{/edit-role/}+${id}" th:object="${role}" method="post" >
+    <table>
+        <input type="hidden" th:field="*{id}" />
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" th:field="*{roleName}" /></td>
+            <td th:class="err" th:if="${#fields.hasErrors('roleName')}" th:errors="*{roleName}">Name Error</td>
+            <span th:class="err" th:text="${existMsg}"></span>
+        </tr>
+
+        <tr>
+            <td><button type="submit" >Save</button></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1><a th:href="@{/logout}">Logout</a></h1>
+<h1>Welcome <span th:text="${name}"></span></h1>
+<h1>You are logged in as <span th:text="${username}"></span></h1>
+<span sec:authorize="hasRole('ROLE_SUPERADMIN')">
+    This is secure page SUPERADMIN
+</span>
+<!--// FOR ADDING AUTHORIZATION WE USE THIS SYSTEM ONLY!-->
+<span sec:authorize="hasRole('ROLE_ADMIN')">
+    This is secure page FOR ADMIN
+</span>
+</body>
+</html>
