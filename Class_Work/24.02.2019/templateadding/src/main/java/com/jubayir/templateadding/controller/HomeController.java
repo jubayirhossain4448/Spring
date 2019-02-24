@@ -1,4 +1,4 @@
-package com.jubayir.templateadding;
+package com.jubayir.templateadding.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,7 +8,6 @@ public class HomeController {
 
     @GetMapping(value = "/")
     public String displayHome(){
-        return "index";
-
+        return "layout";
     }
 }
