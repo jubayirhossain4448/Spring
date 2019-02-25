@@ -2,7 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-layout:decorate="~{layout.html}">
+      layout:decorate="~{layout.html}">
+
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,29 +16,29 @@ layout:decorate="~{layout.html}">
     <title layout:title-pattern="$CONTENT TITLE - $LAYOUT_TITLE">HOTEL BOOKING MANAGEMENT</title>
 
     <!-- Bootstrap CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
     <!-- bootstrap theme -->
-    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" th:href="@{/css/bootstrap-theme.css}" rel="stylesheet">
     <!--external css-->
     <!-- font icon -->
-    <link href="css/elegant-icons-style.css" rel="stylesheet"/>
-    <link href="css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="css/elegant-icons-style.css" th:href="@{/css/elegant-icons-style.css}" rel="stylesheet"/>
+    <link href="css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}" rel="stylesheet"/>
     <!-- full calendar css-->
-    <link href="assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet"/>
-    <link href="assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet"/>
+    <link href="assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" th:href="@{/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css}" rel="stylesheet"/>
+    <link href="assets/fullcalendar/fullcalendar/fullcalendar.css" th:href="@{/assets/fullcalendar/fullcalendar/fullcalendar.css}" rel="stylesheet"/>
     <!-- easy pie chart-->
-    <link href="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"
-          th:href="@{css/style}"/>
+    <link href="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css"  rel="stylesheet" type="text/css" media="screen"
+          th:href="@{/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css}"/>
     <!-- owl carousel -->
-    <link rel="stylesheet" href="css/owl.carousel.css" th:href="@{css/style}"/>
+    <link rel="stylesheet" href="css/owl.carousel.css" th:href="@{/css/owl.carousel.css}"/>
     <link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet">
     <!-- Custom styles -->
-    <link rel="stylesheet" href="css/fullcalendar.css" th:href="@{css/style}"/>
-    <link href="css/widgets.css" rel="stylesheet" th:href="@{css/style}"/>
-    <link href="css/style.css" rel="stylesheet" th:href="@{css/style}"/>
+    <link rel="stylesheet" href="css/fullcalendar.css" th:href="@{/css/fullcalendar.css}"/>
+    <link href="css/widgets.css" rel="stylesheet" th:href="@{/css/widgets.css}"/>
+    <link href="css/style.css" rel="stylesheet" th:href="@{/css/style.css}"/>
     <link href="css/style-responsive.css" rel="stylesheet" th:href="@{css/style}"/>
-    <link href="css/xcharts.min.css" rel=" stylesheet" th:href="@{css/style}"/>
-    <link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet" th:href="@{css/style}"/>
+    <link href="css/xcharts.min.css" rel=" stylesheet" th:href="@{/css/xcharts.min.css}"/>
+    <link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet" th:href="@{/css/jquery-ui-1.10.4.min.css}"/>
 
 
 </head>
