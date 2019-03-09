@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add_User</title>
+</head>
+<body>
+<span th:class="success" th:text="successMsg"></span>
+<form th:action="@{/add}" th:object="${user}" method="post">
+    <table>
+
+        <tr>
+            <td>First Name:</td>
+            <td><input type="text" th:field="*{firstName}"/></td>
+            <td th:class="err" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">Name Error</td>
+        </tr>
+
+        <tr>
+            <td>Lst Name:</td>
+            <td><input type="text" th:field="*{lastName}"/></td>
+            <td th:class="err" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Name Error</td>
+        </tr>
+
+        <tr>
+            <td><input type="submit">Submit</input></td>
+        </tr>
+    </table>
+    <a th:href="@{/}">DashBoard</a>
+</form>
+</body>
+</html>
