@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout.html}">
+<head>
+    <title>Login page</title>
+
+    <!-- Bootstrap CSS -->
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- bootstrap theme -->
+    <link th:href="@{/css/bootstrap-theme.css}" rel="stylesheet">
+    <!--external css-->
+    <!-- font icon -->
+    <link th:href="@{/css/elegant-icons-style.css}" rel="stylesheet" />
+    <link th:href="@{/css/font-awesome.css}" rel="stylesheet" />
+    <!-- Custom styles -->
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+    <link th:href="@{/css/style-responsive.css}" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
+      <script th:src="@{/js/html5shiv.js}"></script>
+      <script th:src="@{/js/respond.min.js}"></script>
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+
+  </head>
+  <body>
+  <section id="main-content" layout:fragment="custom-content">
+      <div class="container">
+          <div class="row">
+              <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                  <div class="card card-signin my-5">
+                      <div class="card-body">
+                          <h5 class="card-title text-center">Sign In</h5>
+                          <form class="form-signin" th:action="@{/login}">
+                              <div class="form-label-group">
+                                  <input type="text" id="inputEmail" name="username" class="form-control" placeholder="Email address" required autofocus>
+                                  <label for="inputEmail">Email address</label>
+                              </div>
+
+                              <div class="form-label-group">
+                                  <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+                                  <label for="inputPassword">Password</label>
+                              </div>
+
+                              <div class="custom-control custom-checkbox mb-3">
+                                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                  <label class="custom-control-label" for="customCheck1">Remember password</label>
+                              </div>
+                              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+                              <hr class="my-4">
+                              <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
+                              <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+  </section>
+  <!--main content end-->
+
+</body>
+</html>
