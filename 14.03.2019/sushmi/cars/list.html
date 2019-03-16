@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layoutlist.html}">
+<head>
+    <meta charset="UTF-8">
+    <title>Car List</title>
+</head>
+<body>
+<!--inner block start here-->
+            <div class="inner-block min-height" layout:fragment="custom-content">
+              <h1>Car Detail</h1>
+                &nbsp;&nbsp;
+                <table id="example" class="table table-striped table-bordered" style="width:100%">
+
+                    <thead>
+                    &nbsp;&nbsp;
+                    <tr>
+                        <th>Agency</th>
+                        <th>Category</th>
+                        <th>Car Number</th>
+                        <th>Car Model</th>
+                        <th>Color</th>
+                        <th>No of Seats</th>
+                        <th>Manufactur Date</th>
+                        <th>Per Day Fare</th>
+                        <th>Edit</th>
+                        <th>Del</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="car : ${list}">
+                        <td th:text="${car.agency.name}"></td>
+                        <td th:text="${car.category.name}"></td>
+                        <td th:text="${car.carNumber}"></td>
+                        <td th:text="${car.carModel}"></td>
+                        <td th:text="${car.color}"></td>
+                        <td th:text="${car.noOfSeats}"></td>
+                        <td th:text="${car.dateOfManufacture}"></td>
+                        <td th:text="${car.farePerDay}"></td>
+
+
+
+                        <td>
+                            <a th:href="@{'/car/edit/'+${car.id}}">Edit</a>
+                        </td>
+                        <td>
+                            <a th:href="@{'/car/del/'+${car.id}}">Del</a>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th>Agency</th>
+                        <th>Category</th>
+                        <th>Car Number</th>
+                        <th>Car Model</th>
+                        <th>Color</th>
+                        <th>No of Seats</th>
+                        <th>Manufactur Date</th>
+                        <th>Per Day Fare</th>
+                        <th>Edit</th>
+                        <th>Del</th>
+                    </tr>
+                    </tfoot>
+                </table>
+
+
+
+            </div>
+            <!--inner block end here-->
+</body>
+</html>

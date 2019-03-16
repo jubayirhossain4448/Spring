@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout.html}">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Car Category</title>
+</head>
+<!--<style>-->
+    <!--/*.min-height{*/-->
+        <!--/*min-height: 600px;*/-->
+    <!--/*}*/-->
+<!--</style>-->
+<body>
+<!--inner block start here-->
+<div class="" layout:fragment="custom-content">
+    <br/><br/>
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row  min-height">
+                <div class="col-md-12 ">
+                    <div class="card">
+                        <div class="header">
+                            <h4 class="title">Add Car Category</h4>
+                        </div>
+                        <div class="content">
+                            <form th:object="${category}" th:action="@{/category/add}" th:method="POST">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label><b>Category Name</b></label>
+                                            <input type="text" th:field="*{name}" class="form-control"
+                                                   placeholder="Enter Category">
+                                            <span th:class="err" th:if="${#fields.hasErrors('name')}"
+                                                  th:errors="*{name}"></span>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-info btn-fill pull-right">Add Category</button>
+
+                                        <span th:class="succes" th:text="${successMsg}"></span>
+                                        <span th:class="err" th:text="${rejectMsg}"></span>
+
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--inner block end here-->
+</body>
+</html>
