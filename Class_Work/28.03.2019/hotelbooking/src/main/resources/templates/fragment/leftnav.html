@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Left Nav</title>
+</head>
+<body>
+
+<!--sidebar start-->
+<div id="sidebar" class="nav-collapse" th:fragment="sidebarnav">
+    <!-- sidebar menu start-->
+    <ul class="sidebar-menu">
+        <li class="active">
+            <a class="" href="http://localhost:8080/">
+                <i class="icon_house_alt"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li class="sub-menu">
+            <a href="javascript:" class="">
+                <i class="icon_document_alt"></i>
+                <span>Role</span>
+                <span class="menu-arrow arrow_carrot-right"></span>
+            </a>
+            <ul class="sub">
+                <li><a class="" href="http://localhost:8080/role/list">Role</a></li>
+                <li><a class="" href="http://localhost:8080/user/list">User</a></li>
+            </ul>
+        </li>
+        <li class="sub-menu">
+            <a href="javascript:" class="">
+                <i class="icon_desktop"></i>
+                <span>Hotel</span>
+                <span class="menu-arrow arrow_carrot-right"></span>
+            </a>
+            <ul class="sub">
+                <li><a class="" href="http://localhost:8080/hotel/list">List</a></li>
+                <li><a class="" href="http://localhost:8080/hotel/add">Add</a></li>
+                <li><a class="" href="http://localhost:8080/hotel/edit">Edit</a></li>
+                <li><a class="" href="http://localhost:8080/hotel/delete">Delete</a></li>
+
+            </ul>
+        </li>
+        <li>
+            <a class="" href="widgets.html">
+                <i class="icon_genius"></i>
+                <span>Room</span>
+            </a>
+            <ul class="sub">
+                <li><a class="" href="http://localhost:8080/room/list">List</a></li>
+                <li><a class="" href="http://localhost:8080/room/add">Add</a></li>
+                <li><a class="" href="http://localhost:8080/room/edit">Edit</a></li>
+            </ul>
+        </li>
+        <li>
+            <a class="" href="chart-chartjs.html">
+                <i class="icon_piechart"></i>
+                <span>Floor</span>
+
+            </a>
+
+        </li>
+
+        <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class="icon_table"></i>
+                <span>Tables</span>
+                <span class="menu-arrow arrow_carrot-right"></span>
+            </a>
+            <ul class="sub">
+                <li><a class="" href="basic_table.html">User_List</a></li>
+                <li><a class="" href="basic_table.html">Role_List</a></li>
+                <li><a class="" href="basic_table.html">Room_List</a></li>
+                <li><a class="" href="basic_table.html">Hotel_List</a></li>
+                <li><a class="" href="basic_table.html">Floor_List</a></li>
+                <li><a class="" href="basic_table.html">Booking_List</a></li>
+                <li><a class="" href="basic_table.html">RoomType_List</a></li>
+            </ul>
+        </li>
+
+        <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class="icon_documents_alt"></i>
+                <span>Pages</span>
+                <span class="menu-arrow arrow_carrot-right"></span>
+            </a>
+            <ul class="sub">
+                <li><a class="" href="profile.html">Profile</a></li>
+                <li class="sub-menu">
+                    <a href="javascript:;" class="">
+                        <i class="icon_document_alt"></i>
+                        <span>User</span>
+                        <span class="menu-arrow arrow_carrot-right"></span>
+                    </a>
+                    <ul class="sub">
+                        <li><a class="" href="form_component.html">Add</a></li>
+                        <li><a class="" href="form_component.html">Edit</a></li>
+                        <li><a class="" href="form_validation.html">List</a></li>
+                    </ul>
+                </li>
+                <li><a class="" href="http://localhost:8080/login"><span>Login Page</span></a></li>
+                <li><a class="" href="contact.html"><span>Contact Page</span></a></li>
+                <li><a class="" href="blank.html">Blank Page</a></li>
+                <li><a class="" th:href="@{http://localhost:8080/404}">404 Error</a></li>
+            </ul>
+        </li>
+
+    </ul>
+    <!-- sidebar menu end-->
+</div>
+<!--sidebar end-->
+</body>
+</html>

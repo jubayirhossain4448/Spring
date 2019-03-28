@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="174.0" y="600.0">com.jubayir.hotelbooking.entity.Booking</node>
+    <node x="58.0" y="1054.0">com.jubayir.hotelbooking.entity.Floor</node>
+    <node x="193.0" y="1076.0">com.jubayir.hotelbooking.entity.RoomType</node>
+    <node x="164.5" y="124.0">com.jubayir.hotelbooking.entity.User</node>
+    <node x="189.5" y="0.0">com.jubayir.hotelbooking.entity.Role</node>
+    <node x="0.0" y="721.0">com.jubayir.hotelbooking.entity.Hotel</node>
+    <node x="99.62500000000001" y="1244.0">com.jubayir.hotelbooking.entity.Room</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.jubayir.hotelbooking.entity.Booking" target="com.jubayir.hotelbooking.entity.User">
+      <point x="42.0" y="-202.0" />
+      <point x="300.0" y="575.0" />
+      <point x="304.75" y="575.0" />
+      <point x="46.75" y="213.0" />
+    </edge>
+    <edge source="com.jubayir.hotelbooking.entity.Room" target="com.jubayir.hotelbooking.entity.RoomType">
+      <point x="62.625" y="-92.0" />
+      <point x="245.75" y="1219.0" />
+      <point x="280.0" y="1219.0" />
+      <point x="29.000000000000014" y="48.0" />
+    </edge>
+    <edge source="com.jubayir.hotelbooking.entity.Room" target="com.jubayir.hotelbooking.entity.Floor">
+      <point x="-20.875" y="-92.0" />
+      <point x="162.25" y="1219.0" />
+      <point x="144.25" y="1219.0" />
+      <point x="28.75" y="70.0" />
+    </edge>
+    <edge source="com.jubayir.hotelbooking.entity.Floor" target="com.jubayir.hotelbooking.entity.Booking">
+      <point x="38.333333333333314" y="-70.0" />
+      <point x="153.83333333333331" y="1029.0" />
+      <point x="258.0" y="1029.0" />
+      <point x="0.0" y="202.0" />
+    </edge>
+    <edge source="com.jubayir.hotelbooking.entity.Floor" target="com.jubayir.hotelbooking.entity.Hotel">
+      <point x="-38.33333333333334" y="-70.0" />
+      <point x="77.16666666666666" y="1029.0" />
+      <point x="38.5" y="1029.0" />
+      <point x="-38.5" y="81.0" />
+    </edge>
+    <edge source="com.jubayir.hotelbooking.entity.User" target="com.jubayir.hotelbooking.entity.Role">
+      <point x="-46.75" y="-213.0" />
+      <point x="211.25" y="99.0" />
+      <point x="223.75" y="99.0" />
+      <point x="-34.25" y="37.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="112.0" y="678.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

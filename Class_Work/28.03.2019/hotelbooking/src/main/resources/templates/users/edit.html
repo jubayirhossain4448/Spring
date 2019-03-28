@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout.html}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
+    <meta name="author" content="GeeksLabs">
+    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>Add_User</title>
+
+    <!-- Bootstrap CSS -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- bootstrap theme -->
+    <link th:href="@{/css/bootstrap-theme.css}" rel="stylesheet">
+    <!--external css-->
+    <!-- font icon -->
+    <link th:href="@{/css/elegant-icons-style.css}" rel="stylesheet"/>
+    <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/daterangepicker.css}" rel="stylesheet"/>
+    <link th:href="@{/css/bootstrap-datepicker.css}" rel="stylesheet"/>
+    <link th:href="@{/css/bootstrap-colorpicker.css}" rel="stylesheet"/>
+    <!-- date picker -->
+
+    <!-- color picker -->
+
+    <!-- Custom styles -->
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+    <link th:href="@{/css/style-responsive.css}" rel="stylesheet"/>
+
+</head>
+<body>
+<section id="main-content" layout:fragment="custom-content">
+    <div>
+    <section class="panel">
+        <header class="panel-heading">
+            <h1>Edit User</h1>
+        </header>
+
+        <div class="panel-body">
+            <span th:class="err" th:text="${rejectMsg}"></span>
+            <form class="form-horizontal" role="form" th:object="${user}" th:action="@{/user/edit/} + ${id}" th:method="POST" enctype="multipart/form-data">
+
+                    <!--<div class="form-group">-->
+                        <!--<label for="textid" class="col-lg-2 control-label">ID:</label>-->
+                        <!--<div class="col-lg-10">-->
+                            <!--<input type="hidden" class="dropdown" id="textid" placeholder="Enter a First Name" th:field="*{id}" th:value="${user.id}">-->
+                            <!--<input type="hidden" class="dropdown" id="textid" placeholder="Enter a First Name" th:field="*{regiDate}" th:value="${user.regiDate}">-->
+                            <!--<input type="hidden" class="dropdown" id="textid" placeholder="Enter a First Name" th:field="*{password}" th:value="${user.password}">-->
+                            <!--<input type="hidden" class="dropdown" id="textid" placeholder="Enter a First Name" th:field="*{enabled}" th:value="${user.enabled}">-->
+                            <!--<input type="hidden" class="dropdown" id="textid" placeholder="Enter a First Name" th:field="*{confirmationToken}" th:value="${user.confirmationToken}">-->
+                            <!--<span th:class="err" th:if="${#fields.hasErrors('id')}" th:errors="*{id}">ID Error</span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                    <div class="form-group">
+                        <label for="text2" class="col-lg-2 control-label">Role:</label>
+                        <div class="col-lg-10">
+                            <select class="form-control input-lg m-bot15" id="text2" th:field="*{roles}">
+                                <option th:each="role : ${rolelist}" th:value="${role.id}"><span th:text="${role.roleName}"></span></option>
+
+                            </select>
+                            <span th:class="err" th:if="${#fields.hasErrors('roles')}" th:errors="*{roles}">Floor Error</span>
+                        </div>
+                    </div>
+
+                 <div class="form-group">
+                    <label for="text" class="col-lg-2 control-label">First Name:</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="text" placeholder="Enter a First Name" th:field="*{firstName}"/>
+                        <span th:class="err" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First Name Error</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="text1" class="col-lg-2 control-label">Last Name:</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="text1" placeholder="Enter a Last Name" th:field="*{lastName}"/>
+                        <span th:class="err" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Last Name Error</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="textu" class="col-lg-2 control-label">User Name:</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="textu" placeholder="Enter a User Name" th:field="*{userName}"/>
+                        <span th:class="err" th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}">User Name Error</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="texte" class="col-lg-2 control-label">E-mail:</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="texte" placeholder="Enter email" th:field="*{email}"/>
+                        <span th:class="err" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="text4" class="col-lg-2 control-label">Mobile Number:</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="text4" placeholder="Enter a Mobile Number" th:field="*{mobile}"/>
+                        <span th:class="err" th:if="${#fields.hasErrors('mobile')}" th:errors="*{mobile}">Mobile Number Error</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="textp" class="col-lg-2 control-label">Photo:</label>
+                    <div class="col-lg-10">
+                        <input type="file" class="form-control" id="textp" name="file"/>
+
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                        <button type="submit" class="btn btn-danger">Update</button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    </div>
+</section>
+<!--main content end-->
+
+
+</body>
+</html>

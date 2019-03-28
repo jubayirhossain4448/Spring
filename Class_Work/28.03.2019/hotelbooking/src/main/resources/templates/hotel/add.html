@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout.html}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
+    <meta name="author" content="GeeksLabs">
+    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>Select Room Type</title>
+
+    <!--&lt;!&ndash; Bootstrap CSS &ndash;&gt;-->
+    <!--<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">-->
+    <!--&lt;!&ndash; bootstrap theme &ndash;&gt;-->
+    <!--<link th:href="@{/css/bootstrap-theme.css}" rel="stylesheet">-->
+    <!--&lt;!&ndash;external css&ndash;&gt;-->
+    <!--&lt;!&ndash; font icon &ndash;&gt;-->
+    <!--<link th:href="@{/css/elegant-icons-style.css}" rel="stylesheet"/>-->
+    <!--<link th:href="@{/css/font-awesome.min.css}" rel="stylesheet"/>-->
+    <!--<link th:href="@{/css/daterangepicker.css}" rel="stylesheet"/>-->
+    <!--<link th:href="@{/css/bootstrap-datepicker.css}" rel="stylesheet"/>-->
+    <!--<link th:href="@{/css/bootstrap-colorpicker.css}" rel="stylesheet"/>-->
+    <!--&lt;!&ndash; date picker &ndash;&gt;-->
+
+    <!--&lt;!&ndash; color picker &ndash;&gt;-->
+
+    <!--&lt;!&ndash; Custom styles &ndash;&gt;-->
+    <!--<link th:href="@{/css/style.css}" rel="stylesheet">-->
+    <!--<link th:href="@{/css/style-responsive.css}" rel="stylesheet"/>-->
+
+</head>
+<body>
+<section class="wrapper" layout:fragment="custom-content">
+    <div class="container" >
+
+
+    <!--<div class="row">-->
+        <!--<div class="col-lg-12">-->
+            <!--<h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>-->
+            <!--<ol class="breadcrumb">-->
+                <!--<li><i class="fa fa-home"></i><a href="index.html">Home</a></li>-->
+                <!--<li><i class="fa fa-laptop"></i>Dashboard</li>-->
+            <!--</ol>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <section class="panel">
+        <header class="panel-heading">
+            Add Hotel
+        </header>
+        <div class="panel-body">
+            <span th:class="succes" th:text="${successMsg}"></span>
+            <form class="form-horizontal" role="form" th:object="${hotel}" th:action="@{/hotel/add}" th:method="POST">
+
+                <div class="form-group">
+                    <label for="text8" class="col-lg-2 control-label">Code:</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="text8" th:field="*{code}">
+                        <span th:class="err" th:if="${#fields.hasErrors('code')}" th:errors="*{code}">Code Error</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="text1" class="col-lg-2 control-label">Hotel Name:</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="text1" placeholder="Enter a First Name" th:field="*{hotelName}">
+                        <span th:class="err" th:if="${#fields.hasErrors('hotelName')}" th:errors="*{hotelName}">Hotel Name Error</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="text2" class="col-lg-2 control-label">Hotel Address:</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="text2" placeholder="Enter a First Name" th:field="*{hotelAddress}">
+                        <span th:class="err" th:if="${#fields.hasErrors('hotelAddress')}" th:errors="*{hotelAddress}">Hotel Address Error</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="text3" class="col-lg-2 control-label">City:</label>
+                    <div class="col-lg-10">
+                        <input type="" class="form-control" id="text3" placeholder="Enter a First Name" th:field="*{city}">
+                        <!--<select id="text3" th:field="*{city}">-->
+                            <!--<option>Bangladesh</option>-->
+                            <!--<option>USA</option>-->
+                            <!--<option>UK</option>-->
+                            <!--<option>Turkey</option>-->
+                            <!--<option>Canada</option>-->
+                            <!--<option>Pakistan</option>-->
+                        <!--</select>-->
+                        <span th:class="err" th:if="${#fields.hasErrors('city')}" th:errors="*{hotelName}">City Name Error</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="text4" class="col-lg-2 control-label">URL:</label>
+                    <div class="col-lg-10">
+                        <input type="url" th:value="www.sonargaon.com" class="form-control" id="text4" placeholder="Enter a First Name" th:field="*{url}">
+                        <span th:class="err" th:if="${#fields.hasErrors('hotelAddress')}" th:errors="*{hotelAddress}">Hotel Address Error</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                        <button type="submit" class="btn btn-danger">Save</button>
+                        <button type="reset" class="btn btn-danger">Reset</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    </div>
+</section>
+<!--main content end-->
+
+
+</body>
+</html>

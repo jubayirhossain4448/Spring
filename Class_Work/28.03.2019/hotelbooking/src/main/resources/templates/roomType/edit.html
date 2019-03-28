@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout.html}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
+    <meta name="author" content="GeeksLabs">
+    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>Select Room Type</title>
+
+    <!-- Bootstrap CSS -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- bootstrap theme -->
+    <link th:href="@{/css/bootstrap-theme.css}" rel="stylesheet">
+    <!--external css-->
+    <!-- font icon -->
+    <link th:href="@{/css/elegant-icons-style.css}" rel="stylesheet"/>
+    <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/daterangepicker.css}" rel="stylesheet"/>
+    <link th:href="@{/css/bootstrap-datepicker.css}" rel="stylesheet"/>
+    <link th:href="@{/css/bootstrap-colorpicker.css}" rel="stylesheet"/>
+    <!-- date picker -->
+
+    <!-- color picker -->
+
+    <!-- Custom styles -->
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+    <link th:href="@{/css/style-responsive.css}" rel="stylesheet"/>
+
+</head>
+<body>
+<section id="main-content" layout:fragment="custom-content">
+    <div>
+    <section class="panel">
+        <header class="panel-heading">
+            Edit Room Type
+        </header>
+        <div class="panel-body">
+            <span th:class="succes" th:text="${successMsg}"></span>
+            <span th:class="err" th:text="${rejectMsg}"></span>
+            <form class="form-horizontal" role="form" th:object="${roomType}" th:action="@{/roomType/edit/} + ${id}" th:method="POST">
+                <div class="form-group">
+
+                    <div class="form-group">
+                        <label for="text8" class="col-lg-2 control-label">ID:</label>
+                        <div class="col-lg-10">
+                            <input type="hidden" class="form-control" id="text8" th:field="*{id}">
+                            <span th:class="err" th:if="${#fields.hasErrors('id')}" th:errors="*{id}">ID Error</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="text6" class="col-lg-2 control-label">Name:</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="text6" th:field="*{name}">
+                            <span th:class="err" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="text" class="col-lg-2 control-label">Status:</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="text" placeholder="Enter a First Name" th:field="*{status}">
+                            <span th:class="err" th:if="${#fields.hasErrors('status')}" th:errors="*{status}">Status Error</span>
+                        </div>
+                    </div>
+
+                <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                        <button type="submit" class="btn btn-danger">Update</button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    </div>
+</section>
+<!--main content end-->
+
+
+</body>
+</html>
